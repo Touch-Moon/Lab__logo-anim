@@ -52,11 +52,12 @@ function PathDrawDemo() {
               fill="none"
               stroke="white"
               strokeWidth="2"
-              initial={{ pathLength: 0, opacity: 0 }}
-              animate={{ pathLength: 1, opacity: 1 }}
+              initial={{ pathLength: 0, pathOffset: 1, opacity: 0 }}
+              animate={{ pathLength: 1, pathOffset: 0, opacity: 1 }}
               transition={{
-                pathLength: { duration: LINE_DURATIONS[i], ease: EASE_OUT, delay: LINE_DELAYS[i] },
-                opacity: { duration: 0.2, delay: LINE_DELAYS[i] },
+                pathLength: { duration: LINE_DURATIONS[i], ease: 'linear', delay: LINE_DELAYS[i] },
+                pathOffset: { duration: LINE_DURATIONS[i], ease: 'linear', delay: LINE_DELAYS[i] },
+                opacity: { duration: 0.1, delay: LINE_DELAYS[i] },
               }}
             />
           ))}
